@@ -13,10 +13,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Alef' rel='stylesheet'>
-
-    <style>
-    .overlay .mask:hover { opacity: 0.25; }
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="dist/css/lightgallery.css" />
 
   </head>
   <body>
@@ -35,13 +33,13 @@
 
               <!-- Links -->
               <ul class="navbar-nav mr-auto" style="margin-left:auto;margin-right:auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home
-                    <span class="sr-only">(current)</span>
-                  </a>
-                </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="gallery.html">Gallery</a>
+                  <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="gallery.html">Gallery
+                  <span class="sr-only">(current)</span>
+                  </a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Pricing</a>
@@ -57,32 +55,58 @@
         </div>
         <div class="row">
         <!-- Card Wider -->
-        <div class="card card-cascade wider col-lg-7 col-md-9 col-sm-12 col-11" style="margin-top:20px;margin-left:auto;margin-right:auto;margin-bottom:8%">
-
-          <!-- Card image -->
-          <div class="view view-cascade overlay zoom z-depth-1 rounded" style="margin-left:auto;margin-right:auto;margin-top:15px">
-            <img class="card-img-top " src="images/home.png" alt="Card image cap">
-            <a href="#!">
-              <div class="mask juicy-peach-gradient"></div>
-            </a>
-          </div>
+        <div class="card card-cascade wider col-lg-7 col-md-9 col-sm-12 col-11" style="margin-top:20px;margin-left:auto;margin-right:auto;padding-bottom:20px;margin-bottom:8%">
 
           <!-- Card content -->
           <div class="card-body card-body-cascade text-center">
 
-            <!-- Title -->
-            <h4 class="card-title"><img class="card-img-top " src="images/logo.png" alt="Card image cap" style="width:20%"></h4>
-            <!-- Subtitle -->
-            <h5 class="juicy-peach-gradient-text pb-2" style="font-family: 'Alef'"><strong>Artist poggers</strong></h5>
-            <!-- Text -->
-            <p class="card-text" style="font-family: 'Alef'">i draw big tiddies n big butts uwu</p>
-
-            <!-- Twitter -->
-            <a class="px-2 fa-lg tw-ic" href="https://twitter.com/anjunncafe" target="_blank"><i class="fab fa-twitter"></i></a>
+            <div  id="aniimated-thumbnials" style="margin-top:20px">
+              <a href="images/img1.jpg">
+                <img class="border rounded-lg" src="images/thumb1.jpg" style="margin-top:10px"/>
+              </a>
+              <a href="images/img2.jpg">
+                <img class="border rounded-lg" src="images/thumb2.jpg" style="margin-top:10px"/>
+              </a>
+              <a href="images/img3.jpg">
+                <img class="border rounded-lg" src="images/thumb3.jpg" style="margin-top:10px"/>
+              </a>
+              <a href="images/img4.jpg">
+                <img class="border rounded-lg" src="images/thumb4.jpg" style="margin-top:10px"/>
+              </a>
+            </div>
 
           </div>
         </div>
       </div>
     </div>
+
+      <script src="dist/js/lightgallery.min.js"></script>
+      <script src="dist/js/lg-thumbnail.min.js"></script>
+      <script src="dist/js/lg-fullscreen.min.js"></script>
+      <script type="text/javascript">
+          $(document).ready(function() {
+              $("#lightgallery").lightGallery();
+          });
+      </script>
+      <script>
+      var $methods = $('#methods');
+      var slide = '<a href="images/img2.jpg">' +
+          '<img src="images/thumb2.jpg" />' +
+      '</a>';
+
+      $methods.lightGallery();
+      $('#appendSlide').on('click', function() {
+          $methods.append(slide);
+          $methods.data('lightGallery').destroy(true);
+          $methods.lightGallery();
+      });
+      </script>
+      <script>
+      $('#aniimated-thumbnials').lightGallery({
+          thumbnail:true,
+          animateThumb: false,
+          showThumbByDefault: false
+      });
+      </script>
   </body>
 </html>
