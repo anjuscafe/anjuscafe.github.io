@@ -19,7 +19,7 @@
   </head>
   <body>
     <div class="container">
-        <div class="col-xl-4 col-lg-6 col-md-7 col-sm-9 col-8" style="margin-top:7%;margin-bottom:auto;margin-left:auto;margin-right:auto">
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8 col-8" style="margin-top:7%;margin-bottom:auto;margin-left:auto;margin-right:auto">
           <!--Navbar-->
           <nav class="navbar navbar-dark rounded navbar-expand-sm" style="background-color: #f2bcac;">
             <!-- Collapse button -->
@@ -55,17 +55,17 @@
         </div>
         <div class="row">
         <!-- Card Wider -->
-        <div class="card card-cascade wider col-xl-7 col-lg-8 col-md-9 col-sm-12 col-11" style="margin-top:20px;margin-left:auto;margin-right:auto;padding-bottom:20px;margin-bottom:8%">
+        <div class="card card-cascade wider col-xl-7 col-lg-9 col-md-9 col-sm-12 col-11" style="margin-top:20px;margin-left:auto;margin-right:auto;margin-bottom:7%">
 
           <!-- Card content -->
           <div class="card-body card-body-cascade text-center">
 
-            <div  id="aniimated-thumbnials" style="margin-top:20px">
+            <div  id="lightgallery" style="margin-top:20px;margin-bottom:20px">
               <a href="images/img1.jpg">
-                <img class="border rounded-lg animated fadeIn" src="images/thumb1.jpg" style="margin-top:10px"/>
+                <img class="border rounded-lg animated fadeIn" src="images/thumb1.jpg"/>
               </a>
               <a href="images/img2.jpg">
-                <img class="border rounded-lg animated fadeIn" src="images/thumb2.jpg" style="margin-top:10px"/>
+                <img class="border rounded-lg animated fadeIn" src="images/thumb2.jpg"/>
               </a>
               <a href="images/img3.jpg">
                 <img class="border rounded-lg animated fadeIn" src="images/thumb3.jpg" style="margin-top:10px"/>
@@ -102,10 +102,13 @@
       });
       </script>
       <script>
-      $('#aniimated-thumbnials').lightGallery({
-          thumbnail:true,
-          animateThumb: false,
-          showThumbByDefault: false
+      $('#lightgallery').lightGallery({
+          thumbnail:false,
+          speed: 700,
+          download: false,
+          counter: false,
+          iframeMaxWidth: '200%',
+          enableDrag: false,
       });
       </script>
   </body>
