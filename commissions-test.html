@@ -64,17 +64,34 @@
           <p class="card-text animated fadeIn" style="font-family: 'Alef'">If you want the final pricing, don't be shy and ask me on twitter!</p>
           <br/>
           <br/>
-          <div class="wrapper typo">I want
-            <div class="list"><span class="placeholder">something</span>
+          <style>
+            #overlay {
+            position: fixed; /* Sit on top of the page content */
+            display: none; /* Hidden by default */
+            width: 100%; /* Full width (cover the whole page) */
+            height: 100%; /* Full height (cover the whole page) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+            z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+            cursor: pointer; /* Add a pointer on hover */
+          }
+          </style>
+
+          <div class="wrapper typo">I would like a/an
+            <div class="list"><span class="placeholder">emote</span>
               <ul class="list__ul">
-                <li><a href="">an emote</a></li>
-                <li><a href="">a headshot</a></li>
-                <li><a href="">a chibi</a></li>
-                <li><a href="">a halfbody</a></li>
-                <li><a href="">a fullbody</a></li>
-                <li><a href="">an illustration</a></li>
+                  <li><a href="">emote</a></li>
+                  <li><a href="">headshot</a></li>
+                  <li><a href="">chibi</a></li>
+                  <li><a href="">halfbody</a></li>
+                  <li><a href="">fullbody</a></li>
+                  <li><a href="">illustration</a></li>
               </ul>
             </div>
+            <br/>yoloooooo
             <!--
             .select
               select.typo
@@ -178,6 +195,16 @@
     });
 
   </script>
+
+  <script>
+function on() {
+  document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+  document.getElementById("overlay").style.display = "none";
+}
+</script>
 
 </body>
 </html>

@@ -50,10 +50,10 @@ body {
   top: 0;
   left: 0;
   display: none;
-  right:-50px;
+  background-color:#ffffff;
 }
 .list ul .active {
-  display: block;
+  display: inline-block;
 }
 .list li {
   list-style: none;
@@ -66,6 +66,7 @@ body {
   transition: all .4s;
   color: #f9c2b3;
   position: relative;
+
 }
 .list a:after {
   position: absolute;
@@ -91,7 +92,7 @@ body {
 select {
   display: inline;
   border: 0;
-  width: auto;
+  width:auto;
   margin-left: 10px;
   outline: none;
   -webkit-appearance: none;
