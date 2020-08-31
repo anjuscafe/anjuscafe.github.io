@@ -63,10 +63,31 @@
           <p class="card-text animated fadeIn" style="font-family: 'Alef'">Please note that this is an estimation of the final price, it may be subject to changes.</p>
           <p class="card-text animated fadeIn" style="font-family: 'Alef'">If you want the final pricing, don't be shy and ask me on twitter!</p>
           <br/>
+          <br/>
+          <div class="wrapper typo">I want
+            <div class="list"><span class="placeholder">something</span>
+              <ul class="list__ul">
+                <li><a href="">an emote</a></li>
+                <li><a href="">a headshot</a></li>
+                <li><a href="">a chibi</a></li>
+                <li><a href="">a halfbody</a></li>
+                <li><a href="">a fullbody</a></li>
+                <li><a href="">an illustration</a></li>
+              </ul>
+            </div>
+            <!--
+            .select
+              select.typo
+                - each item in ['lorem', 'ipsum', 'dolor', 'sit', 'amet']
+                  option.typo
+            -->
+          </div>
+          <br/>
+          <br/>
           <h4 class="juicy-peach-gradient-text pb-2 animated fadeIn" style="font-family: 'Alef';color:#f59f87"><strong>Terms of service</strong></h4>
           <h5 class="juicy-peach-gradient-text pb-2 animated fadeIn" style="font-family: 'Alef'"><strong>By commissioning me, you understand and agree with the terms down below.</strong></h5>
           <br/>
-          <h5 class="juicy-peach-gradient-text pb-2 animated fadeIn" style="font-family: 'Alef';color:green"><strong>What i will draw:</strong></h5>
+          <h5 class="juicy-peach-gradient-text pb-2 animated fadeIn" style="font-family: 'Alef';color:#55D99B"><strong>What i will draw:</strong></h5>
           <p class="card-text animated fadeIn" style="font-family: 'Alef';margin-bottom:3px">OCs</p>
           <p class="card-text animated fadeIn" style="font-family: 'Alef';margin-bottom:3px">Girls (boys with a feminine look/appearance are accepted)</p>
           <p class="card-text animated fadeIn" style="font-family: 'Alef';margin-bottom:3px">Ecchi</p>
@@ -75,7 +96,7 @@
           <p class="card-text animated fadeIn" style="font-family: 'Alef';margin-bottom:3px">Same gender couples</p>
           <p class="card-text animated fadeIn" style="font-family: 'Alef';margin-bottom:3px">Detailed characters</p>
           <br/>
-          <h5 class="juicy-peach-gradient-text pb-2 animated fadeIn" style="font-family: 'Alef';color:red"><strong>What i will not draw:</strong></h5>
+          <h5 class="juicy-peach-gradient-text pb-2 animated fadeIn" style="font-family: 'Alef';color:#D95562"><strong>What i will not draw:</strong></h5>
           <p class="card-text animated fadeIn" style="font-family: 'Alef';margin-bottom:3px">Boys</p>
           <p class="card-text animated fadeIn" style="font-family: 'Alef';margin-bottom:3px">Fetishism</p>
           <p class="card-text animated fadeIn" style="font-family: 'Alef';margin-bottom:3px">NSFW</p>
@@ -121,6 +142,42 @@
       </div>
     </div>
   </div>
+
+  <script>
+    console.clear();
+
+    var el = {};
+
+    $('.placeholder').on('click', function (ev) {
+      $('.placeholder').css('opacity', '0');
+      $('.list__ul').toggle();
+    });
+
+     $('.list__ul a').on('click', function (ev) {
+       ev.preventDefault();
+       var index = $(this).parent().index();
+
+       $('.placeholder').text( $(this).text() ).css('opacity', '1');
+
+       console.log($('.list__ul').find('li').eq(index).html());
+
+       $('.list__ul').find('li').eq(index).prependTo('.list__ul');
+       $('.list__ul').toggle();
+
+     });
+
+
+    $('select').on('change', function (e) {
+
+      // Set text on placeholder hidden element
+      $('.placeholder').text(this.value);
+
+      // Animate select width as placeholder
+      $(this).animate({width: $('.placeholder').width() + 'px' });
+
+    });
+
+  </script>
 
 </body>
 </html>

@@ -11,3 +11,111 @@ body{ background: rgb(252,223,210);background: linear-gradient(90deg, rgba(252,2
 {
     margin-top:22px;
 }
+
+.typo, .list a {
+  font-size: 30px;
+  font-weight: 70;
+  font-family: 'Alef', serif;
+  color: #585858;
+  text-decoration: none;
+}
+.typo option, .list a option {
+  font-size: 20px;
+}
+
+.transition {
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+body {
+  text-align: center;
+}
+
+.wrapper {
+  padding-top: 10px;
+  height: 40vh;
+  font-size: 30px;
+}
+
+.list {
+  display: inline-block;
+  position: relative;
+  margin-left: 6px;
+}
+.list ul {
+  text-align: left;
+  position: absolute;
+  padding: 0;
+  top: 0;
+  left: 0;
+  display: none;
+  right:-50px;
+}
+.list ul .active {
+  display: block;
+}
+.list li {
+  list-style: none;
+}
+.list li:first-child a {
+  color: #f59f87;
+}
+.list a {
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  color: #f9c2b3;
+  position: relative;
+}
+.list a:after {
+  position: absolute;
+  content: '';
+  height: 5px;
+  width: 0;
+  left: 0;
+  background: #f59f87 ;
+  bottom: 0;
+  -webkit-transition: all .4s ease-out;
+  transition: all .4s ease-out;
+}
+.list a:hover {
+  cursor: pointer;
+  color: #f59f87;
+  -webkit-transition: all .4s ease-out;
+  transition: all .4s ease-out;
+}
+.list a:hover:after {
+  width: 100%;
+}
+
+select {
+  display: inline;
+  border: 0;
+  width: auto;
+  margin-left: 10px;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-bottom: 2px solid #555;
+  color: #f59f87;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+select:hover {
+  cursor: pointer;
+}
+select option {
+  border: 0;
+  border-bottom: 1px solid #555;
+  padding: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.placeholder {
+  border-bottom: 4px solid;
+  cursor: pointer;
+}
+.placeholder:hover {
+  color: #fbd1c6;
+}
